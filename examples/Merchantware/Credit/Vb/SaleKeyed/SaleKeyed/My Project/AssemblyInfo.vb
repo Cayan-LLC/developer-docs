@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("MW_VB_SaleKeyed")>
+<Assembly: AssemblyTitle("SaleKeyed")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("MW_VB_SaleKeyed")>
+<Assembly: AssemblyProduct("SaleKeyed")>
 <Assembly: AssemblyCopyright("Copyright ©  2018")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("3aa1103a-2251-4116-b600-f9652bcc2236")>
+<Assembly: Guid("44fcad0d-5a3e-4c50-8bfa-949b371f4ba9")>
 
 ' Version information for an assembly consists of the following four values:
 '

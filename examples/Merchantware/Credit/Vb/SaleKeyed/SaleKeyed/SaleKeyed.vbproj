@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{699A7A51-00DE-44B3-AF86-EDB5B22FA74F}</ProjectGuid>
+    <ProjectGuid>{2336B0E4-5702-4AA9-AF59-2B1E2DC3F012}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>MW_VB_SaleKeyed.Module1</StartupObject>
-    <RootNamespace>MW_VB_SaleKeyed</RootNamespace>
-    <AssemblyName>MW-VB-BoardCardKeyed</AssemblyName>
+    <StartupObject>SaleKeyed.Module1</StartupObject>
+    <RootNamespace>SaleKeyed</RootNamespace>
+    <AssemblyName>SaleKeyed</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>MW-VB-BoardCardKeyed.xml</DocumentationFile>
+    <DocumentationFile>SaleKeyed.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>MW-VB-BoardCardKeyed.xml</DocumentationFile>
+    <DocumentationFile>SaleKeyed.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -70,7 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\MWCredit\Reference.vb">
+    <Compile Include="Connected Services\Cayan45\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -101,20 +101,20 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\Credit.wsdl" />
-    <None Include="Connected Services\MWCredit\MW_VB_BoardCardKeyed.MWCredit.BatchResponse45.datasource">
+    <None Include="Connected Services\Cayan45\Credit.wsdl" />
+    <None Include="Connected Services\Cayan45\SaleKeyed.Cayan45.BatchResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\MW_VB_BoardCardKeyed.MWCredit.SignatureResponse45.datasource">
+    <None Include="Connected Services\Cayan45\SaleKeyed.Cayan45.SignatureResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\MW_VB_BoardCardKeyed.MWCredit.TransactionResponse45.datasource">
+    <None Include="Connected Services\Cayan45\SaleKeyed.Cayan45.TransactionResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\MW_VB_BoardCardKeyed.MWCredit.VaultBoardingResponse45.datasource">
+    <None Include="Connected Services\Cayan45\SaleKeyed.Cayan45.VaultBoardingResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\MW_VB_BoardCardKeyed.MWCredit.VaultTokenResponse45.datasource">
+    <None Include="Connected Services\Cayan45\SaleKeyed.Cayan45.VaultTokenResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
@@ -132,19 +132,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MWCredit\" />
+    <WCFMetadataStorage Include="Connected Services\Cayan45\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\Credit.disco" />
+    <None Include="Connected Services\Cayan45\Credit.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\configuration91.svcinfo" />
+    <None Include="Connected Services\Cayan45\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\configuration.svcinfo" />
+    <None Include="Connected Services\Cayan45\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\Reference.svcmap">
+    <None Include="Connected Services\Cayan45\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>

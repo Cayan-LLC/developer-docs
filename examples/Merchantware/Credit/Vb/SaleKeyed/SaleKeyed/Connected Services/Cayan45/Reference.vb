@@ -12,122 +12,122 @@ Option Strict On
 Option Explicit On
 
 
-Namespace MWCredit
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"), _
-     System.ServiceModel.ServiceContractAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/", ConfigurationName:="MWCredit.CreditSoap")> _
+Namespace Cayan45
+    
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0"),  _
+     System.ServiceModel.ServiceContractAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/", ConfigurationName:="Cayan45.CreditSoap")>  _
     Public Interface CreditSoap
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AdjustTip", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function AdjustTip(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.TipRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AdjustTip", ReplyAction:="*")> _
-        Function AdjustTipAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.TipRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AttachSignature", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function AttachSignature(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.SignatureRequest) As MWCredit.SignatureResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AttachSignature", ReplyAction:="*")> _
-        Function AttachSignatureAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.SignatureRequest) As System.Threading.Tasks.Task(Of MWCredit.SignatureResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Authorize", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function Authorize(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.AuthorizationRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Authorize", ReplyAction:="*")> _
-        Function AuthorizeAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.AuthorizationRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/BoardCard", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function BoardCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.BoardingRequest) As MWCredit.VaultBoardingResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/BoardCard", ReplyAction:="*")> _
-        Function BoardCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.BoardingRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultBoardingResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UpdateBoardedCard", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function UpdateBoardedCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.UpdateBoardedCardRequest) As MWCredit.VaultBoardingResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UpdateBoardedCard", ReplyAction:="*")> _
-        Function UpdateBoardedCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.UpdateBoardedCardRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultBoardingResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Capture", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function Capture(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.CaptureRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Capture", ReplyAction:="*")> _
-        Function CaptureAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.CaptureRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/FindBoardedCard", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function FindBoardedCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As MWCredit.VaultTokenResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/FindBoardedCard", ReplyAction:="*")> _
-        Function FindBoardedCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultTokenResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/ForceCapture", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function ForceCapture(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.ForceCaptureRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/ForceCapture", ReplyAction:="*")> _
-        Function ForceCaptureAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.ForceCaptureRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Refund", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function Refund(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.RefundRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Refund", ReplyAction:="*")> _
-        Function RefundAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.RefundRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Sale", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function Sale(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.SaleRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Sale", ReplyAction:="*")> _
-        Function SaleAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.SaleRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/SettleBatch", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function SettleBatch(ByVal Credentials As MWCredit.MerchantCredentials) As MWCredit.BatchResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/SettleBatch", ReplyAction:="*")> _
-        Function SettleBatchAsync(ByVal Credentials As MWCredit.MerchantCredentials) As System.Threading.Tasks.Task(Of MWCredit.BatchResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UnboardCard", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function UnboardCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As MWCredit.VaultBoardingResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UnboardCard", ReplyAction:="*")> _
-        Function UnboardCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultBoardingResponse45)
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Void", ReplyAction:="*"), _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)> _
-        Function Void(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VoidRequest) As MWCredit.TransactionResponse45
-
-        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Void", ReplyAction:="*")> _
-        Function VoidAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VoidRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AdjustTip", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function AdjustTip(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.TipRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AdjustTip", ReplyAction:="*")>  _
+        Function AdjustTipAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.TipRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AttachSignature", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function AttachSignature(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.SignatureRequest) As Cayan45.SignatureResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/AttachSignature", ReplyAction:="*")>  _
+        Function AttachSignatureAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.SignatureRequest) As System.Threading.Tasks.Task(Of Cayan45.SignatureResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Authorize", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function Authorize(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.AuthorizationRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Authorize", ReplyAction:="*")>  _
+        Function AuthorizeAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.AuthorizationRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/BoardCard", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function BoardCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.BoardingRequest) As Cayan45.VaultBoardingResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/BoardCard", ReplyAction:="*")>  _
+        Function BoardCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.BoardingRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultBoardingResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UpdateBoardedCard", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function UpdateBoardedCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.UpdateBoardedCardRequest) As Cayan45.VaultBoardingResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UpdateBoardedCard", ReplyAction:="*")>  _
+        Function UpdateBoardedCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.UpdateBoardedCardRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultBoardingResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Capture", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function Capture(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.CaptureRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Capture", ReplyAction:="*")>  _
+        Function CaptureAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.CaptureRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/FindBoardedCard", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function FindBoardedCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As Cayan45.VaultTokenResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/FindBoardedCard", ReplyAction:="*")>  _
+        Function FindBoardedCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultTokenResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/ForceCapture", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function ForceCapture(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.ForceCaptureRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/ForceCapture", ReplyAction:="*")>  _
+        Function ForceCaptureAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.ForceCaptureRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Refund", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function Refund(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.RefundRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Refund", ReplyAction:="*")>  _
+        Function RefundAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.RefundRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Sale", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function Sale(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.SaleRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Sale", ReplyAction:="*")>  _
+        Function SaleAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.SaleRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/SettleBatch", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function SettleBatch(ByVal Credentials As Cayan45.MerchantCredentials) As Cayan45.BatchResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/SettleBatch", ReplyAction:="*")>  _
+        Function SettleBatchAsync(ByVal Credentials As Cayan45.MerchantCredentials) As System.Threading.Tasks.Task(Of Cayan45.BatchResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UnboardCard", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function UnboardCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As Cayan45.VaultBoardingResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/UnboardCard", ReplyAction:="*")>  _
+        Function UnboardCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultBoardingResponse45)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Void", ReplyAction:="*"),  _
+         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
+        Function Void(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VoidRequest) As Cayan45.TransactionResponse45
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://schemas.merchantwarehouse.com/merchantware/v45/Void", ReplyAction:="*")>  _
+        Function VoidAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VoidRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45)
     End Interface
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class MerchantCredentials
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private merchantNameField As String
-
+        
         Private merchantSiteIdField As String
-
+        
         Private merchantKeyField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property MerchantName() As String
             Get
                 Return Me.merchantNameField
@@ -137,9 +137,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantName")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property MerchantSiteId() As String
             Get
                 Return Me.merchantSiteIdField
@@ -149,9 +149,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantSiteId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property MerchantKey() As String
             Get
                 Return Me.merchantKeyField
@@ -161,9 +161,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantKey")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -171,27 +171,27 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class VoidRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private tokenField As String
-
+        
         Private registerNumberField As String
-
+        
         Private merchantTransactionIdField As String
-
+        
         Private cardAcceptorTerminalIdField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -201,9 +201,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property RegisterNumber() As String
             Get
                 Return Me.registerNumberField
@@ -213,9 +213,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RegisterNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property MerchantTransactionId() As String
             Get
                 Return Me.merchantTransactionIdField
@@ -225,9 +225,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantTransactionId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property CardAcceptorTerminalId() As String
             Get
                 Return Me.cardAcceptorTerminalIdField
@@ -237,9 +237,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardAcceptorTerminalId")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -247,33 +247,33 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class BatchResponse45
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private batchStatusField As String
-
+        
         Private authorizationCodeField As String
-
+        
         Private batchAmountField As String
-
+        
         Private transactionCountField As Integer
-
+        
         Private transactionDateField As String
-
+        
         Private errorMessageField As String
-
+        
         Private extraDataField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property BatchStatus() As String
             Get
                 Return Me.batchStatusField
@@ -283,9 +283,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("BatchStatus")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property AuthorizationCode() As String
             Get
                 Return Me.authorizationCodeField
@@ -295,9 +295,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AuthorizationCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property BatchAmount() As String
             Get
                 Return Me.batchAmountField
@@ -307,9 +307,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("BatchAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property TransactionCount() As Integer
             Get
                 Return Me.transactionCountField
@@ -319,9 +319,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TransactionCount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property TransactionDate() As String
             Get
                 Return Me.transactionDateField
@@ -331,9 +331,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TransactionDate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property ErrorMessage() As String
             Get
                 Return Me.errorMessageField
@@ -343,9 +343,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorMessage")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property ExtraData() As String
             Get
                 Return Me.extraDataField
@@ -355,9 +355,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExtraData")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -365,31 +365,31 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class HealthCareAmountDetails
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private copayAmountField As String
-
+        
         Private clinicalAmountField As String
-
+        
         Private dentalAmountField As String
-
+        
         Private healthCareTotalAmountField As String
-
+        
         Private prescriptionAmountField As String
-
+        
         Private visionAmountField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property CopayAmount() As String
             Get
                 Return Me.copayAmountField
@@ -399,9 +399,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CopayAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property ClinicalAmount() As String
             Get
                 Return Me.clinicalAmountField
@@ -411,9 +411,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ClinicalAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property DentalAmount() As String
             Get
                 Return Me.dentalAmountField
@@ -423,9 +423,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DentalAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property HealthCareTotalAmount() As String
             Get
                 Return Me.healthCareTotalAmountField
@@ -435,9 +435,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("HealthCareTotalAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property PrescriptionAmount() As String
             Get
                 Return Me.prescriptionAmountField
@@ -447,9 +447,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PrescriptionAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property VisionAmount() As String
             Get
                 Return Me.visionAmountField
@@ -459,9 +459,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("VisionAmount")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -469,63 +469,63 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class SaleRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private amountField As String
-
+        
         Private cashbackAmountField As String
-
+        
         Private surchargeAmountField As String
-
+        
         Private taxAmountField As String
-
+        
         Private healthCareAmountDetailsField As HealthCareAmountDetails
-
+        
         Private invoiceNumberField As String
-
+        
         Private purchaseOrderNumberField As String
-
+        
         Private customerCodeField As String
-
+        
         Private registerNumberField As String
-
+        
         Private merchantTransactionIdField As String
-
+        
         Private cardAcceptorTerminalIdField As String
-
+        
         Private enablePartialAuthorizationField As String
-
+        
         Private forceDuplicateField As String
-
+        
         Private cardCaptureCapabilityField As String
-
+        
         Private ecommerceTransactionIndicatorField As String
-
+        
         Private pinAuthenticationCapabilityField As String
-
+        
         Private posConditionCodeField As String
-
+        
         Private posEntryModeField As String
-
+        
         Private terminalCategoryCodeField As String
-
+        
         Private terminalEntryCapabilityField As String
-
+        
         Private terminalLocationIndicatorField As String
-
+        
         Private invoiceField As Invoice
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -535,9 +535,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property CashbackAmount() As String
             Get
                 Return Me.cashbackAmountField
@@ -547,9 +547,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CashbackAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property SurchargeAmount() As String
             Get
                 Return Me.surchargeAmountField
@@ -559,9 +559,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("SurchargeAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property TaxAmount() As String
             Get
                 Return Me.taxAmountField
@@ -571,9 +571,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TaxAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property HealthCareAmountDetails() As HealthCareAmountDetails
             Get
                 Return Me.healthCareAmountDetailsField
@@ -583,9 +583,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("HealthCareAmountDetails")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property InvoiceNumber() As String
             Get
                 Return Me.invoiceNumberField
@@ -595,9 +595,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("InvoiceNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property PurchaseOrderNumber() As String
             Get
                 Return Me.purchaseOrderNumberField
@@ -607,9 +607,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PurchaseOrderNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property CustomerCode() As String
             Get
                 Return Me.customerCodeField
@@ -619,9 +619,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CustomerCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property RegisterNumber() As String
             Get
                 Return Me.registerNumberField
@@ -631,9 +631,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RegisterNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property MerchantTransactionId() As String
             Get
                 Return Me.merchantTransactionIdField
@@ -643,9 +643,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantTransactionId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property CardAcceptorTerminalId() As String
             Get
                 Return Me.cardAcceptorTerminalIdField
@@ -655,9 +655,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardAcceptorTerminalId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property EnablePartialAuthorization() As String
             Get
                 Return Me.enablePartialAuthorizationField
@@ -667,9 +667,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EnablePartialAuthorization")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=12)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property ForceDuplicate() As String
             Get
                 Return Me.forceDuplicateField
@@ -679,9 +679,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ForceDuplicate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=13)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property CardCaptureCapability() As String
             Get
                 Return Me.cardCaptureCapabilityField
@@ -691,9 +691,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardCaptureCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=14)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=14)>  _
         Public Property EcommerceTransactionIndicator() As String
             Get
                 Return Me.ecommerceTransactionIndicatorField
@@ -703,9 +703,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EcommerceTransactionIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=15)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=15)>  _
         Public Property PinAuthenticationCapability() As String
             Get
                 Return Me.pinAuthenticationCapabilityField
@@ -715,9 +715,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PinAuthenticationCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=16)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=16)>  _
         Public Property PosConditionCode() As String
             Get
                 Return Me.posConditionCodeField
@@ -727,9 +727,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosConditionCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=17)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=17)>  _
         Public Property PosEntryMode() As String
             Get
                 Return Me.posEntryModeField
@@ -739,9 +739,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosEntryMode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=18)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=18)>  _
         Public Property TerminalCategoryCode() As String
             Get
                 Return Me.terminalCategoryCodeField
@@ -751,9 +751,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalCategoryCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=19)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=19)>  _
         Public Property TerminalEntryCapability() As String
             Get
                 Return Me.terminalEntryCapabilityField
@@ -763,9 +763,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalEntryCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=20)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=20)>  _
         Public Property TerminalLocationIndicator() As String
             Get
                 Return Me.terminalLocationIndicatorField
@@ -775,9 +775,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalLocationIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=21)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=21)>  _
         Public Property Invoice() As Invoice
             Get
                 Return Me.invoiceField
@@ -787,9 +787,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Invoice")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -797,41 +797,41 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class Invoice
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private taxIndicatorField As String
-
+        
         Private productDescriptionField As String
-
+        
         Private discountAmountField As String
-
+        
         Private shippingAmountField As String
-
+        
         Private dutyAmountField As String
-
+        
         Private destinationPostalCodeField As String
-
+        
         Private destinationCountryCodeField As String
-
+        
         Private shipFromPostalCodeField As String
-
+        
         Private alternateTaxAmountField As String
-
+        
         Private alternateTaxRateField As String
-
+        
         Private lineItemsField() As LineItem
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property TaxIndicator() As String
             Get
                 Return Me.taxIndicatorField
@@ -841,9 +841,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TaxIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property ProductDescription() As String
             Get
                 Return Me.productDescriptionField
@@ -853,9 +853,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ProductDescription")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property DiscountAmount() As String
             Get
                 Return Me.discountAmountField
@@ -865,9 +865,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DiscountAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property ShippingAmount() As String
             Get
                 Return Me.shippingAmountField
@@ -877,9 +877,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ShippingAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property DutyAmount() As String
             Get
                 Return Me.dutyAmountField
@@ -889,9 +889,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DutyAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property DestinationPostalCode() As String
             Get
                 Return Me.destinationPostalCodeField
@@ -901,9 +901,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DestinationPostalCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property DestinationCountryCode() As String
             Get
                 Return Me.destinationCountryCodeField
@@ -913,9 +913,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DestinationCountryCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property ShipFromPostalCode() As String
             Get
                 Return Me.shipFromPostalCodeField
@@ -925,9 +925,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ShipFromPostalCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property AlternateTaxAmount() As String
             Get
                 Return Me.alternateTaxAmountField
@@ -937,9 +937,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AlternateTaxAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property AlternateTaxRate() As String
             Get
                 Return Me.alternateTaxRateField
@@ -949,9 +949,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AlternateTaxRate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlArrayAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlArrayAttribute(Order:=10)>  _
         Public Property LineItems() As LineItem()
             Get
                 Return Me.lineItemsField
@@ -961,9 +961,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("LineItems")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -971,43 +971,43 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class LineItem
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private commodityCodeField As String
-
+        
         Private descriptionField As String
-
+        
         Private upcField As String
-
+        
         Private quantityField As String
-
+        
         Private unitOfMeasureField As String
-
+        
         Private unitCostField As String
-
+        
         Private discountAmountField As String
-
+        
         Private totalAmountField As String
-
+        
         Private taxAmountField As String
-
+        
         Private extendedAmountField As String
-
+        
         Private debitOrCreditIndicatorField As String
-
+        
         Private netOrGrossIndicatorField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property CommodityCode() As String
             Get
                 Return Me.commodityCodeField
@@ -1017,9 +1017,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CommodityCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Description() As String
             Get
                 Return Me.descriptionField
@@ -1029,9 +1029,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Description")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property Upc() As String
             Get
                 Return Me.upcField
@@ -1041,9 +1041,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Upc")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property Quantity() As String
             Get
                 Return Me.quantityField
@@ -1053,9 +1053,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Quantity")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property UnitOfMeasure() As String
             Get
                 Return Me.unitOfMeasureField
@@ -1065,9 +1065,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("UnitOfMeasure")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property UnitCost() As String
             Get
                 Return Me.unitCostField
@@ -1077,9 +1077,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("UnitCost")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property DiscountAmount() As String
             Get
                 Return Me.discountAmountField
@@ -1089,9 +1089,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DiscountAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property TotalAmount() As String
             Get
                 Return Me.totalAmountField
@@ -1101,9 +1101,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TotalAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property TaxAmount() As String
             Get
                 Return Me.taxAmountField
@@ -1113,9 +1113,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TaxAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property ExtendedAmount() As String
             Get
                 Return Me.extendedAmountField
@@ -1125,9 +1125,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExtendedAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property DebitOrCreditIndicator() As String
             Get
                 Return Me.debitOrCreditIndicatorField
@@ -1137,9 +1137,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DebitOrCreditIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property NetOrGrossIndicator() As String
             Get
                 Return Me.netOrGrossIndicatorField
@@ -1149,9 +1149,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("NetOrGrossIndicator")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1159,45 +1159,45 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class RefundRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private amountField As String
-
+        
         Private invoiceNumberField As String
-
+        
         Private registerNumberField As String
-
+        
         Private merchantTransactionIdField As String
-
+        
         Private cardAcceptorTerminalIdField As String
-
+        
         Private cardCaptureCapabilityField As String
-
+        
         Private ecommerceTransactionIndicatorField As String
-
+        
         Private pinAuthenticationCapabilityField As String
-
+        
         Private posConditionCodeField As String
-
+        
         Private posEntryModeField As String
-
+        
         Private terminalCategoryCodeField As String
-
+        
         Private terminalEntryCapabilityField As String
-
+        
         Private terminalLocationIndicatorField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -1207,9 +1207,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property InvoiceNumber() As String
             Get
                 Return Me.invoiceNumberField
@@ -1219,9 +1219,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("InvoiceNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property RegisterNumber() As String
             Get
                 Return Me.registerNumberField
@@ -1231,9 +1231,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RegisterNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property MerchantTransactionId() As String
             Get
                 Return Me.merchantTransactionIdField
@@ -1243,9 +1243,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantTransactionId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property CardAcceptorTerminalId() As String
             Get
                 Return Me.cardAcceptorTerminalIdField
@@ -1255,9 +1255,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardAcceptorTerminalId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property CardCaptureCapability() As String
             Get
                 Return Me.cardCaptureCapabilityField
@@ -1267,9 +1267,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardCaptureCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property EcommerceTransactionIndicator() As String
             Get
                 Return Me.ecommerceTransactionIndicatorField
@@ -1279,9 +1279,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EcommerceTransactionIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property PinAuthenticationCapability() As String
             Get
                 Return Me.pinAuthenticationCapabilityField
@@ -1291,9 +1291,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PinAuthenticationCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property PosConditionCode() As String
             Get
                 Return Me.posConditionCodeField
@@ -1303,9 +1303,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosConditionCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property PosEntryMode() As String
             Get
                 Return Me.posEntryModeField
@@ -1315,9 +1315,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosEntryMode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property TerminalCategoryCode() As String
             Get
                 Return Me.terminalCategoryCodeField
@@ -1327,9 +1327,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalCategoryCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property TerminalEntryCapability() As String
             Get
                 Return Me.terminalEntryCapabilityField
@@ -1339,9 +1339,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalEntryCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=12)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property TerminalLocationIndicator() As String
             Get
                 Return Me.terminalLocationIndicatorField
@@ -1351,9 +1351,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalLocationIndicator")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1361,47 +1361,47 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class ForceCaptureRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private amountField As String
-
+        
         Private authorizationCodeField As String
-
+        
         Private invoiceNumberField As String
-
+        
         Private registerNumberField As String
-
+        
         Private merchantTransactionIdField As String
-
+        
         Private cardAcceptorTerminalIdField As String
-
+        
         Private cardCaptureCapabilityField As String
-
+        
         Private ecommerceTransactionIndicatorField As String
-
+        
         Private pinAuthenticationCapabilityField As String
-
+        
         Private posConditionCodeField As String
-
+        
         Private posEntryModeField As String
-
+        
         Private terminalCategoryCodeField As String
-
+        
         Private terminalEntryCapabilityField As String
-
+        
         Private terminalLocationIndicatorField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -1411,9 +1411,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property AuthorizationCode() As String
             Get
                 Return Me.authorizationCodeField
@@ -1423,9 +1423,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AuthorizationCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property InvoiceNumber() As String
             Get
                 Return Me.invoiceNumberField
@@ -1435,9 +1435,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("InvoiceNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property RegisterNumber() As String
             Get
                 Return Me.registerNumberField
@@ -1447,9 +1447,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RegisterNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property MerchantTransactionId() As String
             Get
                 Return Me.merchantTransactionIdField
@@ -1459,9 +1459,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantTransactionId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property CardAcceptorTerminalId() As String
             Get
                 Return Me.cardAcceptorTerminalIdField
@@ -1471,9 +1471,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardAcceptorTerminalId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property CardCaptureCapability() As String
             Get
                 Return Me.cardCaptureCapabilityField
@@ -1483,9 +1483,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardCaptureCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property EcommerceTransactionIndicator() As String
             Get
                 Return Me.ecommerceTransactionIndicatorField
@@ -1495,9 +1495,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EcommerceTransactionIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property PinAuthenticationCapability() As String
             Get
                 Return Me.pinAuthenticationCapabilityField
@@ -1507,9 +1507,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PinAuthenticationCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property PosConditionCode() As String
             Get
                 Return Me.posConditionCodeField
@@ -1519,9 +1519,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosConditionCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property PosEntryMode() As String
             Get
                 Return Me.posEntryModeField
@@ -1531,9 +1531,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosEntryMode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property TerminalCategoryCode() As String
             Get
                 Return Me.terminalCategoryCodeField
@@ -1543,9 +1543,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalCategoryCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=12)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property TerminalEntryCapability() As String
             Get
                 Return Me.terminalEntryCapabilityField
@@ -1555,9 +1555,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalEntryCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=13)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property TerminalLocationIndicator() As String
             Get
                 Return Me.terminalLocationIndicatorField
@@ -1567,9 +1567,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalLocationIndicator")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1577,37 +1577,37 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class VaultTokenResponse45
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private cardNumberField As String
-
+        
         Private expirationDateField As String
-
+        
         Private cardholderField As String
-
+        
         Private cardTypeField As String
-
+        
         Private avsStreetAddressField As String
-
+        
         Private avsZipCodeField As String
-
+        
         Private errorCodeField As String
-
+        
         Private errorMessageField As String
-
+        
         Private rfmiqField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property CardNumber() As String
             Get
                 Return Me.cardNumberField
@@ -1617,9 +1617,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property ExpirationDate() As String
             Get
                 Return Me.expirationDateField
@@ -1629,9 +1629,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExpirationDate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property Cardholder() As String
             Get
                 Return Me.cardholderField
@@ -1641,9 +1641,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Cardholder")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property CardType() As String
             Get
                 Return Me.cardTypeField
@@ -1653,9 +1653,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardType")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property AvsStreetAddress() As String
             Get
                 Return Me.avsStreetAddressField
@@ -1665,9 +1665,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AvsStreetAddress")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property AvsZipCode() As String
             Get
                 Return Me.avsZipCodeField
@@ -1677,9 +1677,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AvsZipCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property ErrorCode() As String
             Get
                 Return Me.errorCodeField
@@ -1689,9 +1689,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property ErrorMessage() As String
             Get
                 Return Me.errorMessageField
@@ -1701,9 +1701,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorMessage")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property Rfmiq() As String
             Get
                 Return Me.rfmiqField
@@ -1713,9 +1713,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Rfmiq")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1723,21 +1723,21 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class VaultTokenRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private vaultTokenField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property VaultToken() As String
             Get
                 Return Me.vaultTokenField
@@ -1747,9 +1747,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("VaultToken")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1757,31 +1757,31 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class CaptureRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private tokenField As String
-
+        
         Private amountField As String
-
+        
         Private invoiceNumberField As String
-
+        
         Private registerNumberField As String
-
+        
         Private merchantTransactionIdField As String
-
+        
         Private cardAcceptorTerminalIdField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -1791,9 +1791,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -1803,9 +1803,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property InvoiceNumber() As String
             Get
                 Return Me.invoiceNumberField
@@ -1815,9 +1815,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("InvoiceNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property RegisterNumber() As String
             Get
                 Return Me.registerNumberField
@@ -1827,9 +1827,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RegisterNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property MerchantTransactionId() As String
             Get
                 Return Me.merchantTransactionIdField
@@ -1839,9 +1839,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantTransactionId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property CardAcceptorTerminalId() As String
             Get
                 Return Me.cardAcceptorTerminalIdField
@@ -1851,9 +1851,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardAcceptorTerminalId")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1861,23 +1861,23 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class UpdateBoardedCardRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private vaultTokenField As String
-
+        
         Private expirationDateField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property VaultToken() As String
             Get
                 Return Me.vaultTokenField
@@ -1887,9 +1887,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("VaultToken")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property ExpirationDate() As String
             Get
                 Return Me.expirationDateField
@@ -1899,9 +1899,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExpirationDate")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1909,27 +1909,27 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class VaultBoardingResponse45
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private vaultTokenField As String
-
+        
         Private errorCodeField As String
-
+        
         Private errorMessageField As String
-
+        
         Private rfmiqField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property VaultToken() As String
             Get
                 Return Me.vaultTokenField
@@ -1939,9 +1939,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("VaultToken")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property ErrorCode() As String
             Get
                 Return Me.errorCodeField
@@ -1951,9 +1951,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property ErrorMessage() As String
             Get
                 Return Me.errorMessageField
@@ -1963,9 +1963,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorMessage")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property Rfmiq() As String
             Get
                 Return Me.rfmiqField
@@ -1975,9 +1975,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Rfmiq")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -1985,21 +1985,21 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class BoardingRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private merchantDefinedTokenField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property MerchantDefinedToken() As String
             Get
                 Return Me.merchantDefinedTokenField
@@ -2009,9 +2009,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantDefinedToken")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -2019,55 +2019,55 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class AuthorizationRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private amountField As String
-
+        
         Private invoiceNumberField As String
-
+        
         Private registerNumberField As String
-
+        
         Private merchantTransactionIdField As String
-
+        
         Private cardAcceptorTerminalIdField As String
-
+        
         Private cardCaptureCapabilityField As String
-
+        
         Private ecommerceTransactionIndicatorField As String
-
+        
         Private pinAuthenticationCapabilityField As String
-
+        
         Private posConditionCodeField As String
-
+        
         Private posEntryModeField As String
-
+        
         Private terminalCategoryCodeField As String
-
+        
         Private terminalEntryCapabilityField As String
-
+        
         Private terminalLocationIndicatorField As String
-
+        
         Private enablePartialAuthorizationField As String
-
+        
         Private taxAmountField As String
-
+        
         Private purchaseOrderNumberField As String
-
+        
         Private customerCodeField As String
-
+        
         Private invoiceField As Invoice
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -2077,9 +2077,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property InvoiceNumber() As String
             Get
                 Return Me.invoiceNumberField
@@ -2089,9 +2089,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("InvoiceNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property RegisterNumber() As String
             Get
                 Return Me.registerNumberField
@@ -2101,9 +2101,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RegisterNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property MerchantTransactionId() As String
             Get
                 Return Me.merchantTransactionIdField
@@ -2113,9 +2113,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("MerchantTransactionId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property CardAcceptorTerminalId() As String
             Get
                 Return Me.cardAcceptorTerminalIdField
@@ -2125,9 +2125,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardAcceptorTerminalId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property CardCaptureCapability() As String
             Get
                 Return Me.cardCaptureCapabilityField
@@ -2137,9 +2137,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardCaptureCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property EcommerceTransactionIndicator() As String
             Get
                 Return Me.ecommerceTransactionIndicatorField
@@ -2149,9 +2149,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EcommerceTransactionIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property PinAuthenticationCapability() As String
             Get
                 Return Me.pinAuthenticationCapabilityField
@@ -2161,9 +2161,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PinAuthenticationCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property PosConditionCode() As String
             Get
                 Return Me.posConditionCodeField
@@ -2173,9 +2173,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosConditionCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property PosEntryMode() As String
             Get
                 Return Me.posEntryModeField
@@ -2185,9 +2185,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PosEntryMode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property TerminalCategoryCode() As String
             Get
                 Return Me.terminalCategoryCodeField
@@ -2197,9 +2197,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalCategoryCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property TerminalEntryCapability() As String
             Get
                 Return Me.terminalEntryCapabilityField
@@ -2209,9 +2209,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalEntryCapability")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=12)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property TerminalLocationIndicator() As String
             Get
                 Return Me.terminalLocationIndicatorField
@@ -2221,9 +2221,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TerminalLocationIndicator")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=13)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property EnablePartialAuthorization() As String
             Get
                 Return Me.enablePartialAuthorizationField
@@ -2233,9 +2233,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EnablePartialAuthorization")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=14)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=14)>  _
         Public Property TaxAmount() As String
             Get
                 Return Me.taxAmountField
@@ -2245,9 +2245,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TaxAmount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=15)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=15)>  _
         Public Property PurchaseOrderNumber() As String
             Get
                 Return Me.purchaseOrderNumberField
@@ -2257,9 +2257,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PurchaseOrderNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=16)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=16)>  _
         Public Property CustomerCode() As String
             Get
                 Return Me.customerCodeField
@@ -2269,9 +2269,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CustomerCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=17)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=17)>  _
         Public Property Invoice() As Invoice
             Get
                 Return Me.invoiceField
@@ -2281,9 +2281,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Invoice")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -2291,59 +2291,59 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class PaymentData
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private sourceField As String
-
+        
         Private trackDataField As String
-
+        
         Private pinBlockField As String
-
+        
         Private pinKsnField As String
-
+        
         Private readerEntryModeField As String
-
+        
         Private cardNumberField As String
-
+        
         Private expirationDateField As String
-
+        
         Private cardHolderField As String
-
+        
         Private avsStreetAddressField As String
-
+        
         Private avsZipCodeField As String
-
+        
         Private cardVerificationValueField As String
-
+        
         Private tokenField As String
-
+        
         Private vaultTokenField As String
-
+        
         Private customerEmailAddressField As String
-
+        
         Private walletIdField As String
-
+        
         Private encryptedKeyedDataField As String
-
+        
         Private paymentCryptogramField As String
-
+        
         Private paymentCryptogramTypeField As String
-
+        
         Private encryptedPaymentDataField As String
-
+        
         Private eciIndicatorField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Source() As String
             Get
                 Return Me.sourceField
@@ -2353,9 +2353,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Source")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property TrackData() As String
             Get
                 Return Me.trackDataField
@@ -2365,9 +2365,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TrackData")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property PinBlock() As String
             Get
                 Return Me.pinBlockField
@@ -2377,9 +2377,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PinBlock")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property PinKsn() As String
             Get
                 Return Me.pinKsnField
@@ -2389,9 +2389,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PinKsn")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property ReaderEntryMode() As String
             Get
                 Return Me.readerEntryModeField
@@ -2401,9 +2401,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ReaderEntryMode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property CardNumber() As String
             Get
                 Return Me.cardNumberField
@@ -2413,9 +2413,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property ExpirationDate() As String
             Get
                 Return Me.expirationDateField
@@ -2425,9 +2425,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExpirationDate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property CardHolder() As String
             Get
                 Return Me.cardHolderField
@@ -2437,9 +2437,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardHolder")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property AvsStreetAddress() As String
             Get
                 Return Me.avsStreetAddressField
@@ -2449,9 +2449,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AvsStreetAddress")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property AvsZipCode() As String
             Get
                 Return Me.avsZipCodeField
@@ -2461,9 +2461,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AvsZipCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property CardVerificationValue() As String
             Get
                 Return Me.cardVerificationValueField
@@ -2473,9 +2473,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardVerificationValue")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -2485,9 +2485,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=12)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property VaultToken() As String
             Get
                 Return Me.vaultTokenField
@@ -2497,9 +2497,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("VaultToken")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=13)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property CustomerEmailAddress() As String
             Get
                 Return Me.customerEmailAddressField
@@ -2509,9 +2509,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CustomerEmailAddress")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=14)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=14)>  _
         Public Property WalletId() As String
             Get
                 Return Me.walletIdField
@@ -2521,9 +2521,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("WalletId")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=15)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=15)>  _
         Public Property EncryptedKeyedData() As String
             Get
                 Return Me.encryptedKeyedDataField
@@ -2533,9 +2533,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EncryptedKeyedData")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=16)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=16)>  _
         Public Property PaymentCryptogram() As String
             Get
                 Return Me.paymentCryptogramField
@@ -2545,9 +2545,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PaymentCryptogram")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=17)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=17)>  _
         Public Property PaymentCryptogramType() As String
             Get
                 Return Me.paymentCryptogramTypeField
@@ -2557,9 +2557,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("PaymentCryptogramType")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=18)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=18)>  _
         Public Property EncryptedPaymentData() As String
             Get
                 Return Me.encryptedPaymentDataField
@@ -2569,9 +2569,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EncryptedPaymentData")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=19)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=19)>  _
         Public Property EciIndicator() As String
             Get
                 Return Me.eciIndicatorField
@@ -2581,9 +2581,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("EciIndicator")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -2591,27 +2591,27 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class SignatureResponse45
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private uploadStatusField As String
-
+        
         Private tokenField As String
-
+        
         Private transactionDateField As String
-
+        
         Private errorMessageField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property UploadStatus() As String
             Get
                 Return Me.uploadStatusField
@@ -2621,9 +2621,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("UploadStatus")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -2633,9 +2633,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property TransactionDate() As String
             Get
                 Return Me.transactionDateField
@@ -2645,9 +2645,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TransactionDate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property ErrorMessage() As String
             Get
                 Return Me.errorMessageField
@@ -2657,9 +2657,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorMessage")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -2667,23 +2667,23 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class SignatureRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private tokenField As String
-
+        
         Private vectorImageDataField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -2693,9 +2693,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property VectorImageData() As String
             Get
                 Return Me.vectorImageDataField
@@ -2705,9 +2705,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("VectorImageData")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -2715,27 +2715,27 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class FraudScoring
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private externalReferenceField As String
-
+        
         Private recommendationField As String
-
+        
         Private scoreField As String
-
+        
         Private statusField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property ExternalReference() As String
             Get
                 Return Me.externalReferenceField
@@ -2745,9 +2745,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExternalReference")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Recommendation() As String
             Get
                 Return Me.recommendationField
@@ -2757,9 +2757,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Recommendation")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property Score() As String
             Get
                 Return Me.scoreField
@@ -2769,9 +2769,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Score")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property Status() As String
             Get
                 Return Me.statusField
@@ -2781,9 +2781,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Status")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -2791,57 +2791,57 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class TransactionResponse45
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private approvalStatusField As String
-
+        
         Private tokenField As String
-
+        
         Private authorizationCodeField As String
-
+        
         Private transactionDateField As String
-
+        
         Private amountField As String
-
+        
         Private remainingCardBalanceField As String
-
+        
         Private cardNumberField As String
-
+        
         Private cardholderField As String
-
+        
         Private cardTypeField As String
-
+        
         Private fsaCardField As String
-
+        
         Private readerEntryModeField As String
-
+        
         Private avsResponseField As String
-
+        
         Private cvResponseField As String
-
+        
         Private errorMessageField As String
-
+        
         Private extraDataField As String
-
+        
         Private fraudScoringField As FraudScoring
-
+        
         Private rfmiqField As String
-
+        
         Private debitTraceNumberField As String
-
+        
         Private invoiceField As Invoice
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property ApprovalStatus() As String
             Get
                 Return Me.approvalStatusField
@@ -2851,9 +2851,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ApprovalStatus")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -2863,9 +2863,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=2)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=2)>  _
         Public Property AuthorizationCode() As String
             Get
                 Return Me.authorizationCodeField
@@ -2875,9 +2875,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AuthorizationCode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=3)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=3)>  _
         Public Property TransactionDate() As String
             Get
                 Return Me.transactionDateField
@@ -2887,9 +2887,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("TransactionDate")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=4)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=4)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -2899,9 +2899,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=5)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=5)>  _
         Public Property RemainingCardBalance() As String
             Get
                 Return Me.remainingCardBalanceField
@@ -2911,9 +2911,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("RemainingCardBalance")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=6)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=6)>  _
         Public Property CardNumber() As String
             Get
                 Return Me.cardNumberField
@@ -2923,9 +2923,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=7)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=7)>  _
         Public Property Cardholder() As String
             Get
                 Return Me.cardholderField
@@ -2935,9 +2935,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Cardholder")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=8)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=8)>  _
         Public Property CardType() As String
             Get
                 Return Me.cardTypeField
@@ -2947,9 +2947,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CardType")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=9)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=9)>  _
         Public Property FsaCard() As String
             Get
                 Return Me.fsaCardField
@@ -2959,9 +2959,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("FsaCard")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=10)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=10)>  _
         Public Property ReaderEntryMode() As String
             Get
                 Return Me.readerEntryModeField
@@ -2971,9 +2971,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ReaderEntryMode")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=11)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=11)>  _
         Public Property AvsResponse() As String
             Get
                 Return Me.avsResponseField
@@ -2983,9 +2983,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("AvsResponse")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=12)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=12)>  _
         Public Property CvResponse() As String
             Get
                 Return Me.cvResponseField
@@ -2995,9 +2995,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("CvResponse")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=13)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=13)>  _
         Public Property ErrorMessage() As String
             Get
                 Return Me.errorMessageField
@@ -3007,9 +3007,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ErrorMessage")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=14)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=14)>  _
         Public Property ExtraData() As String
             Get
                 Return Me.extraDataField
@@ -3019,9 +3019,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("ExtraData")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=15)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=15)>  _
         Public Property FraudScoring() As FraudScoring
             Get
                 Return Me.fraudScoringField
@@ -3031,9 +3031,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("FraudScoring")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=16)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=16)>  _
         Public Property Rfmiq() As String
             Get
                 Return Me.rfmiqField
@@ -3043,9 +3043,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Rfmiq")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=17)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=17)>  _
         Public Property DebitTraceNumber() As String
             Get
                 Return Me.debitTraceNumberField
@@ -3055,9 +3055,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("DebitTraceNumber")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=18)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=18)>  _
         Public Property Invoice() As Invoice
             Get
                 Return Me.invoiceField
@@ -3067,9 +3067,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Invoice")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -3077,23 +3077,23 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
+    
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"), _
-     System.SerializableAttribute(), _
-     System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.ComponentModel.DesignerCategoryAttribute("code"), _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")> _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2612.0"),  _
+     System.SerializableAttribute(),  _
+     System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://schemas.merchantwarehouse.com/merchantware/v45/")>  _
     Partial Public Class TipRequest
         Inherits Object
         Implements System.ComponentModel.INotifyPropertyChanged
-
+        
         Private tokenField As String
-
+        
         Private amountField As String
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
         Public Property Token() As String
             Get
                 Return Me.tokenField
@@ -3103,9 +3103,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Token")
             End Set
         End Property
-
+        
         '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)> _
+        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
         Public Property Amount() As String
             Get
                 Return Me.amountField
@@ -3115,9 +3115,9 @@ Namespace MWCredit
                 Me.RaisePropertyChanged("Amount")
             End Set
         End Property
-
+        
         Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
+        
         Protected Sub RaisePropertyChanged(ByVal propertyName As String)
             Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
             If (Not (propertyChanged) Is Nothing) Then
@@ -3125,139 +3125,139 @@ Namespace MWCredit
             End If
         End Sub
     End Class
-
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")> _
+    
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Public Interface CreditSoapChannel
-        Inherits MWCredit.CreditSoap, System.ServiceModel.IClientChannel
+        Inherits Cayan45.CreditSoap, System.ServiceModel.IClientChannel
     End Interface
-
-    <System.Diagnostics.DebuggerStepThroughAttribute(), _
-     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")> _
+    
+    <System.Diagnostics.DebuggerStepThroughAttribute(),  _
+     System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
     Partial Public Class CreditSoapClient
-        Inherits System.ServiceModel.ClientBase(Of MWCredit.CreditSoap)
-        Implements MWCredit.CreditSoap
-
+        Inherits System.ServiceModel.ClientBase(Of Cayan45.CreditSoap)
+        Implements Cayan45.CreditSoap
+        
         Public Sub New()
             MyBase.New
         End Sub
-
+        
         Public Sub New(ByVal endpointConfigurationName As String)
             MyBase.New(endpointConfigurationName)
         End Sub
-
+        
         Public Sub New(ByVal endpointConfigurationName As String, ByVal remoteAddress As String)
             MyBase.New(endpointConfigurationName, remoteAddress)
         End Sub
-
+        
         Public Sub New(ByVal endpointConfigurationName As String, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(endpointConfigurationName, remoteAddress)
         End Sub
-
+        
         Public Sub New(ByVal binding As System.ServiceModel.Channels.Binding, ByVal remoteAddress As System.ServiceModel.EndpointAddress)
             MyBase.New(binding, remoteAddress)
         End Sub
-
-        Public Function AdjustTip(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.TipRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.AdjustTip
+        
+        Public Function AdjustTip(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.TipRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.AdjustTip
             Return MyBase.Channel.AdjustTip(Credentials, Request)
         End Function
-
-        Public Function AdjustTipAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.TipRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.AdjustTipAsync
+        
+        Public Function AdjustTipAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.TipRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.AdjustTipAsync
             Return MyBase.Channel.AdjustTipAsync(Credentials, Request)
         End Function
-
-        Public Function AttachSignature(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.SignatureRequest) As MWCredit.SignatureResponse45 Implements MWCredit.CreditSoap.AttachSignature
+        
+        Public Function AttachSignature(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.SignatureRequest) As Cayan45.SignatureResponse45 Implements Cayan45.CreditSoap.AttachSignature
             Return MyBase.Channel.AttachSignature(Credentials, Request)
         End Function
-
-        Public Function AttachSignatureAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.SignatureRequest) As System.Threading.Tasks.Task(Of MWCredit.SignatureResponse45) Implements MWCredit.CreditSoap.AttachSignatureAsync
+        
+        Public Function AttachSignatureAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.SignatureRequest) As System.Threading.Tasks.Task(Of Cayan45.SignatureResponse45) Implements Cayan45.CreditSoap.AttachSignatureAsync
             Return MyBase.Channel.AttachSignatureAsync(Credentials, Request)
         End Function
-
-        Public Function Authorize(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.AuthorizationRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.Authorize
+        
+        Public Function Authorize(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.AuthorizationRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.Authorize
             Return MyBase.Channel.Authorize(Credentials, PaymentData, Request)
         End Function
-
-        Public Function AuthorizeAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.AuthorizationRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.AuthorizeAsync
+        
+        Public Function AuthorizeAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.AuthorizationRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.AuthorizeAsync
             Return MyBase.Channel.AuthorizeAsync(Credentials, PaymentData, Request)
         End Function
-
-        Public Function BoardCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.BoardingRequest) As MWCredit.VaultBoardingResponse45 Implements MWCredit.CreditSoap.BoardCard
+        
+        Public Function BoardCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.BoardingRequest) As Cayan45.VaultBoardingResponse45 Implements Cayan45.CreditSoap.BoardCard
             Return MyBase.Channel.BoardCard(Credentials, PaymentData, Request)
         End Function
-
-        Public Function BoardCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.BoardingRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultBoardingResponse45) Implements MWCredit.CreditSoap.BoardCardAsync
+        
+        Public Function BoardCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.BoardingRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultBoardingResponse45) Implements Cayan45.CreditSoap.BoardCardAsync
             Return MyBase.Channel.BoardCardAsync(Credentials, PaymentData, Request)
         End Function
-
-        Public Function UpdateBoardedCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.UpdateBoardedCardRequest) As MWCredit.VaultBoardingResponse45 Implements MWCredit.CreditSoap.UpdateBoardedCard
+        
+        Public Function UpdateBoardedCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.UpdateBoardedCardRequest) As Cayan45.VaultBoardingResponse45 Implements Cayan45.CreditSoap.UpdateBoardedCard
             Return MyBase.Channel.UpdateBoardedCard(Credentials, Request)
         End Function
-
-        Public Function UpdateBoardedCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.UpdateBoardedCardRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultBoardingResponse45) Implements MWCredit.CreditSoap.UpdateBoardedCardAsync
+        
+        Public Function UpdateBoardedCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.UpdateBoardedCardRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultBoardingResponse45) Implements Cayan45.CreditSoap.UpdateBoardedCardAsync
             Return MyBase.Channel.UpdateBoardedCardAsync(Credentials, Request)
         End Function
-
-        Public Function Capture(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.CaptureRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.Capture
+        
+        Public Function Capture(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.CaptureRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.Capture
             Return MyBase.Channel.Capture(Credentials, Request)
         End Function
-
-        Public Function CaptureAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.CaptureRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.CaptureAsync
+        
+        Public Function CaptureAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.CaptureRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.CaptureAsync
             Return MyBase.Channel.CaptureAsync(Credentials, Request)
         End Function
-
-        Public Function FindBoardedCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As MWCredit.VaultTokenResponse45 Implements MWCredit.CreditSoap.FindBoardedCard
+        
+        Public Function FindBoardedCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As Cayan45.VaultTokenResponse45 Implements Cayan45.CreditSoap.FindBoardedCard
             Return MyBase.Channel.FindBoardedCard(Credentials, Request)
         End Function
-
-        Public Function FindBoardedCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultTokenResponse45) Implements MWCredit.CreditSoap.FindBoardedCardAsync
+        
+        Public Function FindBoardedCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultTokenResponse45) Implements Cayan45.CreditSoap.FindBoardedCardAsync
             Return MyBase.Channel.FindBoardedCardAsync(Credentials, Request)
         End Function
-
-        Public Function ForceCapture(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.ForceCaptureRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.ForceCapture
+        
+        Public Function ForceCapture(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.ForceCaptureRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.ForceCapture
             Return MyBase.Channel.ForceCapture(Credentials, PaymentData, Request)
         End Function
-
-        Public Function ForceCaptureAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.ForceCaptureRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.ForceCaptureAsync
+        
+        Public Function ForceCaptureAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.ForceCaptureRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.ForceCaptureAsync
             Return MyBase.Channel.ForceCaptureAsync(Credentials, PaymentData, Request)
         End Function
-
-        Public Function Refund(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.RefundRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.Refund
+        
+        Public Function Refund(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.RefundRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.Refund
             Return MyBase.Channel.Refund(Credentials, PaymentData, Request)
         End Function
-
-        Public Function RefundAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.RefundRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.RefundAsync
+        
+        Public Function RefundAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.RefundRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.RefundAsync
             Return MyBase.Channel.RefundAsync(Credentials, PaymentData, Request)
         End Function
-
-        Public Function Sale(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.SaleRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.Sale
+        
+        Public Function Sale(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.SaleRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.Sale
             Return MyBase.Channel.Sale(Credentials, PaymentData, Request)
         End Function
-
-        Public Function SaleAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal PaymentData As MWCredit.PaymentData, ByVal Request As MWCredit.SaleRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.SaleAsync
+        
+        Public Function SaleAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal PaymentData As Cayan45.PaymentData, ByVal Request As Cayan45.SaleRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.SaleAsync
             Return MyBase.Channel.SaleAsync(Credentials, PaymentData, Request)
         End Function
-
-        Public Function SettleBatch(ByVal Credentials As MWCredit.MerchantCredentials) As MWCredit.BatchResponse45 Implements MWCredit.CreditSoap.SettleBatch
+        
+        Public Function SettleBatch(ByVal Credentials As Cayan45.MerchantCredentials) As Cayan45.BatchResponse45 Implements Cayan45.CreditSoap.SettleBatch
             Return MyBase.Channel.SettleBatch(Credentials)
         End Function
-
-        Public Function SettleBatchAsync(ByVal Credentials As MWCredit.MerchantCredentials) As System.Threading.Tasks.Task(Of MWCredit.BatchResponse45) Implements MWCredit.CreditSoap.SettleBatchAsync
+        
+        Public Function SettleBatchAsync(ByVal Credentials As Cayan45.MerchantCredentials) As System.Threading.Tasks.Task(Of Cayan45.BatchResponse45) Implements Cayan45.CreditSoap.SettleBatchAsync
             Return MyBase.Channel.SettleBatchAsync(Credentials)
         End Function
-
-        Public Function UnboardCard(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As MWCredit.VaultBoardingResponse45 Implements MWCredit.CreditSoap.UnboardCard
+        
+        Public Function UnboardCard(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As Cayan45.VaultBoardingResponse45 Implements Cayan45.CreditSoap.UnboardCard
             Return MyBase.Channel.UnboardCard(Credentials, Request)
         End Function
-
-        Public Function UnboardCardAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VaultTokenRequest) As System.Threading.Tasks.Task(Of MWCredit.VaultBoardingResponse45) Implements MWCredit.CreditSoap.UnboardCardAsync
+        
+        Public Function UnboardCardAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VaultTokenRequest) As System.Threading.Tasks.Task(Of Cayan45.VaultBoardingResponse45) Implements Cayan45.CreditSoap.UnboardCardAsync
             Return MyBase.Channel.UnboardCardAsync(Credentials, Request)
         End Function
-
-        Public Function Void(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VoidRequest) As MWCredit.TransactionResponse45 Implements MWCredit.CreditSoap.Void
+        
+        Public Function Void(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VoidRequest) As Cayan45.TransactionResponse45 Implements Cayan45.CreditSoap.Void
             Return MyBase.Channel.Void(Credentials, Request)
         End Function
-
-        Public Function VoidAsync(ByVal Credentials As MWCredit.MerchantCredentials, ByVal Request As MWCredit.VoidRequest) As System.Threading.Tasks.Task(Of MWCredit.TransactionResponse45) Implements MWCredit.CreditSoap.VoidAsync
+        
+        Public Function VoidAsync(ByVal Credentials As Cayan45.MerchantCredentials, ByVal Request As Cayan45.VoidRequest) As System.Threading.Tasks.Task(Of Cayan45.TransactionResponse45) Implements Cayan45.CreditSoap.VoidAsync
             Return MyBase.Channel.VoidAsync(Credentials, Request)
         End Function
     End Class
