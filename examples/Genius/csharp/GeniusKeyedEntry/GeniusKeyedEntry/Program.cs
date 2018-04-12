@@ -41,11 +41,16 @@ namespace GeniusKeyedEntry
             string transportKey = transportResponse.TransportKey;
             Console.WriteLine("TransportKey Received = {0}{1}", transportKey, Environment.NewLine);
             // Initiate transaction thread with received TransportKey
-            Task<TransactionResult> transactionResult = GeniusSale($"http://{ipAddress}:8080/v2/pos?TransportKey={transportKey}&Format=XML");
+            Task<object> transactionResultTask = GeniusRequest($"http://{ipAddress}:8080/v2/pos?TransportKey={transportKey}&Format=XML", typeof(TransactionResult));
             string keyedEntryResult = InitiateKeyedEntry(ipAddress);
             Console.WriteLine("InitiateKeyedEntry Result: {0}", keyedEntryResult);
-            transactionResult.Wait();
-            Console.WriteLine("Transaction Result: {0}", transactionResult.Result.Status);
+            transactionResultTask.Wait();
+            TransactionResult transactionResult = (TransactionResult)transactionResultTask.Result;
+            Console.WriteLine("Transaction Result: {0}", transactionResult.Status);
+            Console.WriteLine("Amount: {0}", transactionResult.AmountApproved);
+            Console.WriteLine("AuthCode: {0}", transactionResult.AuthorizationCode);
+            Console.WriteLine("Token: {0}", transactionResult.Token);
+            Console.WriteLine("Account Number: {0}", transactionResult.AccountNumber);
 
             // Close application
             Console.WriteLine("Press Any Key to Close");
@@ -61,7 +66,7 @@ namespace GeniusKeyedEntry
                 // Wait 1 Second then get the current screen
                 Thread.Sleep(1000);
                 Console.WriteLine("Sending Status Request.");
-                StatusResult statusResult = GeniusStatus($"http://{ipAddress}:8080/v2/pos?Action=Status&Format=XML");
+                StatusResult statusResult = (StatusResult)GeniusRequest($"http://{ipAddress}:8080/v2/pos?Action=Status&Format=XML", typeof(StatusResult)).Result;
                 // Check the current screen and move on if we are on screen 02 or 03
                 if (statusResult.CurrentScreen == "02" || statusResult.CurrentScreen == "03")
                 {
@@ -78,7 +83,7 @@ namespace GeniusKeyedEntry
 
             if (onSaleScreen)
             {
-                InitiateKeyedEntryResult keyedEntryResult = GeniusKeyedEntry($"http://{ipAddress}:8080/pos?Action=InitiateKeyedEntry&Format=XML");
+                InitiateKeyedEntryResult keyedEntryResult = (InitiateKeyedEntryResult)GeniusRequest($"http://{ipAddress}:8080/pos?Action=InitiateKeyedEntry&Format=XML",typeof(InitiateKeyedEntryResult)).Result;
                 return keyedEntryResult.Status;
             }
             else
@@ -87,7 +92,7 @@ namespace GeniusKeyedEntry
             }
         }
 
-        private static async Task<TransactionResult> GeniusSale(string url)
+        private static async Task<object> GeniusRequest(string url, Type resultType)
         {
             WebRequest webReq = WebRequest.Create(url);
             using (WebResponse webResp = await webReq.GetResponseAsync())
@@ -96,41 +101,9 @@ namespace GeniusKeyedEntry
                 {
                     // Validate XML to Genius XSD class
                     StreamReader streamReader = new StreamReader(responseStream);
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(TransactionResult));
-                    TransactionResult transactionResult = (TransactionResult)xmlSerializer.Deserialize(streamReader);
+                    XmlSerializer xmlSerializer = new XmlSerializer(resultType);
+                    object transactionResult = xmlSerializer.Deserialize(streamReader);
                     return transactionResult;
-                }
-            }
-        }
-
-        private static StatusResult GeniusStatus(string url)
-        {
-            WebRequest webReq = WebRequest.Create(url);
-            using (WebResponse webResp = webReq.GetResponse())
-            {
-                using (Stream responseStream = webResp.GetResponseStream())
-                {
-                    // Validate XML to Genius XSD class
-                    StreamReader streamReader = new StreamReader(responseStream);
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(StatusResult));
-                    StatusResult statusResult = (StatusResult)xmlSerializer.Deserialize(streamReader);
-                    return statusResult;
-                }
-            }
-        }
-
-        private static InitiateKeyedEntryResult GeniusKeyedEntry(string url)
-        {
-            WebRequest webReq = WebRequest.Create(url);
-            using (WebResponse webResp = webReq.GetResponse())
-            {
-                using (Stream responseStream = webResp.GetResponseStream())
-                {
-                    // Validate XML to Genius XSD class
-                    StreamReader streamReader = new StreamReader(responseStream);
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(InitiateKeyedEntryResult));
-                    InitiateKeyedEntryResult keyedEntryResult = (InitiateKeyedEntryResult)xmlSerializer.Deserialize(streamReader);
-                    return keyedEntryResult;
                 }
             }
         }
