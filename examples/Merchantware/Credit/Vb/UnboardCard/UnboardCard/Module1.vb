@@ -1,24 +1,25 @@
-﻿Imports UnboardCard.Cayan45
+﻿Imports UnboardCard.MWCredit
+
 Module Module1
 
     Sub Main()
         'Create Soap Client
-        Dim Cayan45 As New CreditSoapClient
+        Dim MWCredit As New CreditSoapClient
 
-        'Create Credentails Object
+        'Create Credentials Object
         Dim Credentials As New MerchantCredentials With {
-            .MerchantName = "TEST MERCHANT",
-            .MerchantSiteId = "XXXXXXXX",
-            .MerchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+        .MerchantName = "TEST MERCHANT",
+        .MerchantSiteId = "XXXXXXXX",
+        .MerchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
         }
 
         'Create Request Object
         Dim Request As New VaultTokenRequest
-        Request.VaultToken = "100000100AOL628QZ3K5"
+        Request.VaultToken = "100000100ABCDE123456"
 
         'Process Request
         Dim Response As VaultBoardingResponse45
-        Response = Cayan45.UnboardCard(Credentials, Request)
+        Response = MWCredit.UnboardCard(Credentials, Request)
 
         'Display Results
         Console.WriteLine(" Vault Token: {0} Error Code: {1} Error Message: {2}", Response.VaultToken + vbNewLine, Response.ErrorCode + vbNewLine, Response.ErrorMessage + vbNewLine)
