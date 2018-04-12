@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeniusCreateTransportKey", "GeniusCreateTransportKey\GeniusCreateTransportKey.csproj", "{68720EE2-5258-43B5-BD3C-2B41F3C9CB51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68720EE2-5258-43B5-BD3C-2B41F3C9CB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68720EE2-5258-43B5-BD3C-2B41F3C9CB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68720EE2-5258-43B5-BD3C-2B41F3C9CB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68720EE2-5258-43B5-BD3C-2B41F3C9CB51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89A16E5E-D05D-429C-993F-C88CD1F7EE4F}
+	EndGlobalSection
+EndGlobal
