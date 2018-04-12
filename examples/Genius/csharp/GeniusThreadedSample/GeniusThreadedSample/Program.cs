@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using GeniusThreadedSample.TransportWeb;
@@ -40,47 +41,37 @@ namespace GeniusThreadedSample
             string transportKey = transportResponse.TransportKey;
             Console.WriteLine("TransportKey Received = {0}{1}", transportKey, Environment.NewLine);
             // Initiate transaction thread with received TransportKey
-            Task<TransactionResult> transactionResult = GeniusSale($"http://{ipAddress}:8080/v2/pos?TransportKey={transportKey}&Format=XML");
-            Console.WriteLine("Waiting 3 seconds before canceling transaction");
-            System.Threading.Thread.Sleep(3000);
-            Task<CancelResult> cancelResult = GeniusCancel($"http://{ipAddress}:8080/pos?Action=Cancel&Format=XML");
-            cancelResult.Wait();
-            Console.WriteLine("Cancel Result: {0}", cancelResult.Result.Status);
-            transactionResult.Wait();
-            Console.WriteLine("Transaction Result: {0}", transactionResult.Result.Status);
+            Task<object> transactionResultTask = GeniusRequest($"http://{ipAddress}:8080/v2/pos?TransportKey={transportKey}&Format=XML", typeof(TransactionResult));
+            // Wait 5 seconds
+            Console.WriteLine("Waiting 5 seconds before canceling transaction");
+            Thread.Sleep(5000);
+            CancelResult cancelResult = (CancelResult)GeniusRequest($"http://{ipAddress}:8080/pos?Action=Cancel&Format=XML", typeof(CancelResult)).Result;
+            Console.WriteLine("Cancel Result: {0}", cancelResult.Status);
+            // Wait for Transaction Results then output
+            transactionResultTask.Wait();
+            TransactionResult transactionResult = (TransactionResult)transactionResultTask.Result;
+            Console.WriteLine("Transaction Result: {0}", transactionResult.Status);
+            Console.WriteLine("Amount: {0}", transactionResult.AmountApproved);
+            Console.WriteLine("AuthCode: {0}", transactionResult.AuthorizationCode);
+            Console.WriteLine("Token: {0}", transactionResult.Token);
+            Console.WriteLine("Account Number: {0}", transactionResult.AccountNumber);
 
             // Close application
             Console.WriteLine("Press Any Key to Close");
             Console.ReadKey();
         }
 
-        private static async Task<TransactionResult> GeniusSale(string geniusRequest)
+        private static async Task<object> GeniusRequest(string url, Type resultType)
         {
-            WebRequest webRequest = WebRequest.Create(geniusRequest);
-            using (WebResponse webResponse = await webRequest.GetResponseAsync())
+            WebRequest webReq = WebRequest.Create(url);
+            using (WebResponse webResp = await webReq.GetResponseAsync())
             {
-                using (Stream responseStream = webResponse.GetResponseStream())
+                using (Stream responseStream = webResp.GetResponseStream())
                 {
                     // Validate XML to Genius XSD class
                     StreamReader streamReader = new StreamReader(responseStream);
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(TransactionResult));
-                    TransactionResult transactionResult = (TransactionResult)xmlSerializer.Deserialize(streamReader);
-                    return transactionResult;
-                }
-            }
-        }
-
-        private static async Task<CancelResult> GeniusCancel(string geniusRequest)
-        {
-            WebRequest webRequest = WebRequest.Create(geniusRequest);
-            using (WebResponse webResponse = await webRequest.GetResponseAsync())
-            {
-                using (Stream responseStream = webResponse.GetResponseStream())
-                {
-                    // Validate XML to Genius XSD class
-                    StreamReader streamReader = new StreamReader(responseStream);
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(CancelResult));
-                    CancelResult transactionResult = (CancelResult)xmlSerializer.Deserialize(streamReader);
+                    XmlSerializer xmlSerializer = new XmlSerializer(resultType);
+                    object transactionResult = xmlSerializer.Deserialize(streamReader);
                     return transactionResult;
                 }
             }
