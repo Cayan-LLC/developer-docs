@@ -12,7 +12,7 @@ namespace GeniusCancel
             string ipAddress = "192.168.0.123";
 
             // Initiate transaction with TransportKey
-            WebRequest webReq = WebRequest.Create($"http://{ipAddress}:8080/v2/pos?Action=Cancel&Format=XML");
+            WebRequest webReq = WebRequest.Create($"http://{ipAddress}:8080/pos?Action=Cancel&Format=XML");
             using (WebResponse webResp = webReq.GetResponse())
             {
                 using (Stream responseStream = webResp.GetResponseStream())
