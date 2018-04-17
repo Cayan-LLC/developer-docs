@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GeniusCreateTransaction", "GeniusCreateTransaction\GeniusCreateTransaction.pyproj", "{D2799E04-9EDF-403C-BCED-F9F6B9B31EFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D2799E04-9EDF-403C-BCED-F9F6B9B31EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2799E04-9EDF-403C-BCED-F9F6B9B31EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6F3F4B6-F551-4C67-AECF-E925C3DA5801}
+	EndGlobalSection
+EndGlobal
