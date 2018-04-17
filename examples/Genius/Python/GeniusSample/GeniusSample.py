@@ -4,18 +4,16 @@ import lxml.objectify as objectify
 from zeep.client import Client
 
 # Declare credentials to be used with the Stage Transaction Request
-credentialsName = "TEST MERCHANT"
-credentialsSiteID = "XXXXXXXX"
-credentialsKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
-ipAddress = "192.168.0.123"
-
+credentials_name = "TEST MERCHANT"
+credentials_site_id = "XXXXXXXX"
+credentials_key = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+ip_address = "192.168.0.123"
 # Generate XML and XSD Validation
-geniusSchema = etree.XMLSchema(file='Genius.xsd')
-xmlparser = objectify.makeparser(schema=geniusSchema)
-
+genius_schema = etree.XMLSchema(file='Genius.xsd')
+xml_parser = objectify.makeparser(schema=genius_schema)
 # Generate WSDL and SOAP Objects Build Transport request details
-transportSoap = Client(wsdl='https://transport.merchantware.net/v4/transportService.asmx?WSDL')
-transportRequest = transportSoap.get_type("ns0:TransportRequest")(
+transport_soap = Client(wsdl='https://transport.merchantware.net/v4/transportService.asmx?WSDL')
+transport_request = transport_soap.get_type("ns0:TransportRequest")(
     TransactionType="SALE",
     Amount=1.01,
     ClerkId="1",
@@ -23,32 +21,28 @@ transportRequest = transportSoap.get_type("ns0:TransportRequest")(
     Dba="TEST MERCHANT",
     SoftwareName="Test Software",
     SoftwareVersion="1.0",
-    TransactionId="102911",
     TerminalId = "01",
     PoNumber="PO1234",
-    TaxAmount="0.01",
+    TaxAmount="0.10",
     EntryMode="Undefined",
     ForceDuplicate=True
 )
-
 # Stage Transaction
 print("Staging Transaction\n");
-transportResponse = transportSoap.service.CreateTransaction(credentialsName, credentialsSiteID, credentialsKey, transportRequest)
-transportKey = transportResponse.TransportKey
-print("TransportKey Received: %s\n" % transportKey)
-
+transport_response = transport_soap.service.CreateTransaction(credentials_name, credentials_site_id, credentials_key, transport_request)
+transport_key = transport_response.TransportKey
+print("TransportKey Received: %s\n" % transport_key)
 # Initiate transaction with TransportKey
-print("Sending TransportKey %s to Terminal %s" % (transportKey, ipAddress))
-geniusComm = urllib3.PoolManager()
-geniusRequest = "http://%s:8080/v2/pos?TransportKey=%s&Format=XML" % (ipAddress, transportKey)
-geniusResponse = geniusComm.request("GET", geniusRequest).data
-
+print("Sending TransportKey %s to Terminal %s" % (transport_key, ip_address))
+genius_comm = urllib3.PoolManager()
+genius_request_url = "http://%s:8080/v2/pos?TransportKey=%s&Format=XML" % (ip_address, transport_key)
+genius_response = genius_comm.request("GET", genius_request_url).data
 # Validate the response with the Genius XSD
-geniusResponseData = objectify.fromstring(geniusResponse, xmlparser)
-print("Transaction Result: %s" % geniusResponseData.Status)
-print("Amount: %s" % geniusResponseData.AmountApproved)
-print("AuthCode: %s" % geniusResponseData.AuthorizationCode)
-print("Token: %s" % geniusResponseData.Token)
-print("Account Number: %s" % geniusResponseData.AccountNumber)
+genius_response_data = objectify.fromstring(genius_response, xml_parser)
+print("Transaction Result: %s" % genius_response_data.Status)
+print("Amount: %s" % genius_response_data.AmountApproved)
+print("AuthCode: %s" % genius_response_data.AuthorizationCode)
+print("Token: %s" % genius_response_data.Token)
+print("Account Number: %s" % genius_response_data.AccountNumber)
 
 input("Press Enter to close")
