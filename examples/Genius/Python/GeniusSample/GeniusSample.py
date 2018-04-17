@@ -26,23 +26,29 @@ transportRequest = transportSoap.get_type("ns0:TransportRequest")(
     TransactionId="102911",
     TerminalId = "01",
     PoNumber="PO1234",
+    TaxAmount="0.01",
+    EntryMode="Undefined",
     ForceDuplicate=True
 )
 
 # Stage Transaction
+print("Staging Transaction\n");
 transportResponse = transportSoap.service.CreateTransaction(credentialsName, credentialsSiteID, credentialsKey, transportRequest)
 transportKey = transportResponse.TransportKey
 print("TransportKey Received: %s\n" % transportKey)
 
 # Initiate transaction with TransportKey
-print("\nSending TransportKey %s to Terminal %s" % (transportKey, ipAddress))
+print("Sending TransportKey %s to Terminal %s" % (transportKey, ipAddress))
 geniusComm = urllib3.PoolManager()
 geniusRequest = "http://%s:8080/v2/pos?TransportKey=%s&Format=XML" % (ipAddress, transportKey)
 geniusResponse = geniusComm.request("GET", geniusRequest).data
 
 # Validate the response with the Genius XSD
 geniusResponseData = objectify.fromstring(geniusResponse, xmlparser)
-print("Terminal Response:\n\n%s\n" % geniusResponse)
 print("Transaction Result: %s" % geniusResponseData.Status)
+print("Amount: %s" % geniusResponseData.AmountApproved)
+print("AuthCode: %s" % geniusResponseData.AuthorizationCode)
+print("Token: %s" % geniusResponseData.Token)
+print("Account Number: %s" % geniusResponseData.AccountNumber)
 
 input("Press Enter to close")
