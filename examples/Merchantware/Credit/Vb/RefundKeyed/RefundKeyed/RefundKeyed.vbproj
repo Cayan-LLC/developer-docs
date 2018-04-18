@@ -70,7 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\MWCredit\Reference.vb">
+    <Compile Include="Connected Services\MWCredit45\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -101,20 +101,20 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\Credit.wsdl" />
-    <None Include="Connected Services\MWCredit\SaleReader.MWCredit.BatchResponse45.datasource">
+    <None Include="Connected Services\MWCredit45\Credit.wsdl" />
+    <None Include="Connected Services\MWCredit45\RefundKeyed.MWCredit45.BatchResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\SaleReader.MWCredit.SignatureResponse45.datasource">
+    <None Include="Connected Services\MWCredit45\RefundKeyed.MWCredit45.SignatureResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\SaleReader.MWCredit.TransactionResponse45.datasource">
+    <None Include="Connected Services\MWCredit45\RefundKeyed.MWCredit45.TransactionResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\SaleReader.MWCredit.VaultBoardingResponse45.datasource">
+    <None Include="Connected Services\MWCredit45\RefundKeyed.MWCredit45.VaultBoardingResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\MWCredit\SaleReader.MWCredit.VaultTokenResponse45.datasource">
+    <None Include="Connected Services\MWCredit45\RefundKeyed.MWCredit45.VaultTokenResponse45.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
@@ -132,19 +132,19 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\MWCredit\" />
+    <WCFMetadataStorage Include="Connected Services\MWCredit45\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\Credit.disco" />
+    <None Include="Connected Services\MWCredit45\Credit.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\configuration91.svcinfo" />
+    <None Include="Connected Services\MWCredit45\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\configuration.svcinfo" />
+    <None Include="Connected Services\MWCredit45\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\MWCredit\Reference.svcmap">
+    <None Include="Connected Services\MWCredit45\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
