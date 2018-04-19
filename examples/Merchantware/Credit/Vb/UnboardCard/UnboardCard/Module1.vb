@@ -1,28 +1,25 @@
-﻿Imports UnboardCard.MWCredit
+﻿Imports UnboardCard.MWCredit45
 
 Module Module1
 
     Sub Main()
         'Create Soap Client
-        Dim MWCredit As New CreditSoapClient
-
+        Dim creditSoapClient As New CreditSoapClient
         'Create Credentials Object
-        Dim Credentials As New MerchantCredentials With {
-        .MerchantName = "TEST MERCHANT",
-        .MerchantSiteId = "XXXXXXXX",
-        .MerchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+        Dim merchantCredentials As New MerchantCredentials With {
+            .MerchantName = "TEST MERCHANT",
+            .MerchantSiteId = "XXXXXXXX",
+            .MerchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
         }
-
         'Create Request Object
-        Dim Request As New VaultTokenRequest
-        Request.VaultToken = "100000100ABCDE123456"
-
+        Dim vaultTokenRequest As New VaultTokenRequest With {
+        .VaultToken = "100000100ABCDE123456"
+        }
         'Process Request
-        Dim Response As VaultBoardingResponse45
-        Response = MWCredit.UnboardCard(Credentials, Request)
-
+        Dim vaultBoardingResponse45 As VaultBoardingResponse45
+        vaultBoardingResponse45 = creditSoapClient.UnboardCard(merchantCredentials, vaultTokenRequest)
         'Display Results
-        Console.WriteLine(" Vault Token: {0} Error Code: {1} Error Message: {2}", Response.VaultToken + vbNewLine, Response.ErrorCode + vbNewLine, Response.ErrorMessage + vbNewLine)
+        Console.WriteLine(" Vault Token: {0} Error Code: {1} Error Message: {2}", vaultBoardingResponse45.VaultToken + vbNewLine, vaultBoardingResponse45.ErrorCode + vbNewLine, vaultBoardingResponse45.ErrorMessage + vbNewLine)
         Console.WriteLine("Press Any Key to Close")
         Console.ReadKey()
     End Sub
