@@ -1,24 +1,21 @@
-﻿Imports SettleBatch.MWCredit
+﻿Imports SettleBatch.MWCredit45
 
 Module Module1
 
     Sub Main()
         'Create Soap Client
-        Dim MWCredit As New CreditSoapClient
-
+        Dim creditSoapClient As New CreditSoapClient
         'Create Credentials Object
-        Dim Credentials As New MerchantCredentials With {
-        .MerchantName = "TEST MERCHANT",
-        .MerchantSiteId = "XXXXXXXX",
-        .MerchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
+        Dim merchantCredentials As New MerchantCredentials With {
+            .MerchantName = "TEST MERCHANT",
+            .MerchantSiteId = "XXXXXXXX",
+            .MerchantKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
         }
-
         'Process Request
-        Dim SettleResponse As BatchResponse45
-        SettleResponse = MWCredit.SettleBatch(Credentials)
-
+        Dim batchResponse45 As BatchResponse45
+        batchResponse45 = creditSoapClient.SettleBatch(merchantCredentials)
         'Display Results
-        Console.WriteLine(" Batch Status: {0} Amount: ${1} Authorization Code: {2} Transaction Count: {3} Transaction Date: {4} Error Message: {5}", SettleResponse.BatchStatus + vbNewLine, SettleResponse.BatchAmount + vbNewLine, SettleResponse.AuthorizationCode + vbNewLine, SettleResponse.TransactionCount + vbNewLine, SettleResponse.TransactionDate + vbNewLine, SettleResponse.ErrorMessage + vbNewLine)
+        Console.WriteLine(" Batch Status: {0} Amount: ${1} Authorization Code: {2} Transaction Count: {3} Transaction Date: {4} Error Message: {5}", batchResponse45.BatchStatus + vbNewLine, batchResponse45.BatchAmount + vbNewLine, batchResponse45.AuthorizationCode + vbNewLine, batchResponse45.TransactionCount + vbNewLine, batchResponse45.TransactionDate + vbNewLine, batchResponse45.ErrorMessage + vbNewLine)
         Console.WriteLine("Press Any Key to Close")
         Console.ReadKey()
     End Sub
