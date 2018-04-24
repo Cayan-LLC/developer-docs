@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://transport.merchantware.net/v4/transportService.asmx?wsdl" docRef="https://transport.merchantware.net/v4/transportService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://transport.merchantware.net/v4/transportService.asmx" xmlns:q1="http://transport.merchantware.net/v4/" binding="q1:TransportServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://transport.merchantware.net/v4/transportService.asmx" xmlns:q2="http://transport.merchantware.net/v4/" binding="q2:TransportServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
