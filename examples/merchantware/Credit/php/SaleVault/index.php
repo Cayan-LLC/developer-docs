@@ -10,11 +10,11 @@
                 ),
             "PaymentData" => array (
                 "Source"     => "Vault",
-                "VaultToken" => "100000100ABCDE123456",
+                "VaultToken" => "OTT_LT1KSFBNOZB123456A",
                 ),
             "Request" => array (
                 "Amount"                     => "1.01",
-				"TaxAmount"                  => "0.10",
+                "TaxAmount"                  => "0.10",
                 "InvoiceNumber"              => "INV1234",
                 "CardAcceptorTerminalId"     => "01",
                 "CustomerCode"               => "1234",

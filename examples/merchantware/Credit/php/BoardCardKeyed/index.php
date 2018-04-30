@@ -1,7 +1,7 @@
 <?php
     header("Content-Type: application/json");
     $client = new SoapClient("https://ps1.merchantware.net/Merchantware/ws/RetailTransaction/v45/Credit.asmx?WSDL");
-    $response = $client->Sale(
+    $response = $client->BoardCard(
         array (
             "Credentials" => array (
                 "MerchantName"   => "TEST MERCHANT",
@@ -15,18 +15,9 @@
                 "CardHolder"            => "John Doe",
                 "AvsStreetAddress"      => "1 Federal St",
                 "AvsZipCode"            => "02110",
-                "CardVerificationValue" => "123",
-                ),
-            "Request" => array (
-                "Amount"                     => "1.01",
-                "TaxAmount"                  => "0.10",
-                "InvoiceNumber"              => "INV1234",
-                "CardAcceptorTerminalId"     => "01",
-                "CustomerCode"               => "1234",
-                "PurchaseOrderNumber"        => "PO1234",
-                "EnablePartialAuthorization" => "true"
+                "CardVerificationValue" => "123"
                 )
             )
         );
-    print_r(json_encode($response->SaleResult));
+    print_r(json_encode($response->BoardCardResult));
 ?>
