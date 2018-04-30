@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "RefundKeyed", "RefundKeyed\RefundKeyed.pyproj", "{FA9AC091-3EAC-4A1B-AF62-4A94A18B5007}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA9AC091-3EAC-4A1B-AF62-4A94A18B5007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9AC091-3EAC-4A1B-AF62-4A94A18B5007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4626E73-A743-473A-AD29-8F4AF11FAE1B}
+	EndGlobalSection
+EndGlobal
