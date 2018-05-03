@@ -1,0 +1,358 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="AdditionalParameters">
+		<xs:sequence>
+			<xs:element type="xs:boolean" name="PaymentDataCaptured" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:boolean" name="RemoveEMVCard" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:string" name="SignatureData" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="AmountDetails" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element type="xs:decimal" name="UserTip"/>
+						<xs:element type="xs:decimal" name="Cashback"/>
+						<xs:element type="xs:decimal" name="Donation"/>
+						<xs:element type="xs:decimal" name="Surcharge"/>
+						<xs:element name="RemainingCardBalance" minOccurs="0" maxOccurs="1">
+							<xs:simpleType>
+								<xs:union>
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:length value="0"/>
+										</xs:restriction>
+									</xs:simpleType>
+									<xs:simpleType>
+										<xs:restriction base="xs:decimal">
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:union>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="Discount" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:decimal" name="Total"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EbtDetails" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element type="xs:string" name="EbtType"/>
+						<xs:element name="Balances">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:decimal" name="CashAvailableBalance"/>
+									<xs:element type="xs:decimal" name="SnapAvailableBalance"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element type="xs:string" name="TrackingId" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="EMV" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ApplicationInformation">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:string" name="Aid"/>
+									<xs:element type="xs:string" name="ApplicationLabel"/>
+									<xs:element type="xs:string" name="ApplicationExpiryDate"/>
+									<xs:element type="xs:string" name="ApplicationEffectiveDate"/>
+									<xs:element type="xs:string" name="ApplicationInterchangeProfile"/>
+									<xs:element type="xs:string" name="ApplicationVersionNumber"/>
+									<xs:element type="xs:string" name="ApplicationTransactionCounter"/>
+									<xs:element type="xs:string" name="ApplicationUsageControl"/>
+									<xs:element type="xs:string" name="ApplicationPreferredName"/>
+									<xs:element type="xs:string" name="ApplicationDisplayName"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="CardInformation">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:string" name="MaskedPan"/>
+									<xs:element type="xs:string" name="PanSequenceNumber"/>
+									<xs:element type="xs:string" name="CardExpiryDate"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="ApplicationCryptogram">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:string" name="CryptogramType"/>
+									<xs:element type="xs:string" name="Cryptogram"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element type="xs:string" name="CvmResults"/>
+						<xs:element type="xs:string" name="IssuerApplicationData"/>
+						<xs:element type="xs:string" name="TerminalVerificationResults"/>
+						<xs:element type="xs:string" name="UnpredictableNumber"/>
+						<xs:element name="Amount">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:decimal" name="AmountAuthorized"/>
+									<xs:element type="xs:decimal" name="AmountOther"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element type="xs:string" name="PosEntryMode"/>
+						<xs:element name="TerminalInformation">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:string" name="TerminalType"/>
+									<xs:element type="xs:string" name="IfdSerialNumber"/>
+									<xs:element type="xs:string" name="TerminalCountryCode"/>
+									<xs:element type="xs:string" name="TerminalID"/>
+									<xs:element type="xs:string" name="TerminalActionCodeDefault"/>
+									<xs:element type="xs:string" name="TerminalActionCodeDenial"/>
+									<xs:element type="xs:string" name="TerminalActionCodeOnline"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="TransactionInformation">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:string" name="TransactionType"/>
+									<xs:element type="xs:string" name="TransactionCurrencyCode"/>
+									<xs:element type="xs:string" name="TransactionStatusInformation"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element type="xs:string" name="CryptogramInformationData"/>
+						<xs:element type="xs:string" name="PINStatement"/>
+						<xs:element type="xs:string" name="CvmMethod"/>
+						<xs:element type="xs:string" name="IssuerActionCodeDefault"/>
+						<xs:element type="xs:string" name="IssuerActionCodeDenial"/>
+						<xs:element type="xs:string" name="IssuerActionCodeOnline"/>
+						<xs:element type="xs:string" name="AuthorizationResponseCode"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="KeyedDetails" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element type="xs:string" name="ExpirationDate"/>
+						<xs:element type="xs:string" name="AvsStreetZipCode"/>
+						<xs:element type="xs:string" name="AvsResponse" minOccurs="0" maxOccurs="1"/>
+						<xs:element type="xs:string" name="CvResponse" minOccurs="0" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="MultiTender" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Transactions">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Transaction" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element type="xs:string" name="Status"/>
+												<xs:element type="xs:string" name="ErrorMessage"/>
+												<xs:element type="xs:decimal" name="AmountRequested"/>
+												<xs:element type="xs:decimal" name="AmountApproved"/>
+												<xs:element type="xs:string" name="AccountNumber"/>
+												<xs:element type="xs:string" name="Token"/>
+												<xs:element type="xs:string" name="TransactionType"/>
+												<xs:element type="xs:string" name="PaymentType"/>
+												<xs:element name="Reward" minOccurs="0">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element type="xs:string" name="ErrorMessage"/>
+															<xs:element type="xs:string" name="AccountNumber"/>
+															<xs:element type="xs:string" name="Type"/>
+															<xs:element type="xs:string" name="Quantity"/>
+															<xs:element type="xs:string" name="Token"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Loyalty" minOccurs="0" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element type="xs:string" name="AccountNumber"/>
+						<xs:element name="Balances" minOccurs="0" maxOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element type="xs:string" name="PointsBalance"/>
+									<xs:element type="xs:string" name="AmountBalance"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element type="xs:string" name="PointsEarned" minOccurs="0" maxOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="StatusResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+				<xs:element type="xs:string" name="CurrentScreen"/>
+				<xs:element type="xs:string" name="ResponseMessage"/>
+				<xs:element type="xs:string" name="SerialNumber"/>
+				<xs:element type="xs:string" name="ApplicationVersion"/>
+				<xs:element type="xs:string" name="OSVersion"/>
+				<xs:element type="AdditionalParameters" name="AdditionalParameters"/>
+				<xs:element type="xs:boolean" name="RemoveEMVCard" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CancelResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+				<xs:element type="xs:string" name="ResponseMessage"/>
+				<xs:element type="xs:string" name="AdditionalParameters"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+				<xs:element type="xs:string" name="ResponseMessage"/>
+				<xs:element type="xs:decimal" name="Items" minOccurs="0" maxOccurs="1"/>
+				<xs:element type="xs:decimal" name="Discounts" minOccurs="0" maxOccurs="1"/>
+				<xs:element type="xs:decimal" name="TotalAmount" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="CustomSubTotal" minOccurs="0" maxOccurs="1">
+					<xs:simpleType>
+						<xs:union>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal">
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:union>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element type="xs:decimal" name="TaxAmount" minOccurs="0" maxOccurs="1"/>
+				<xs:element type="xs:string" name="ItemID" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="AdditionalParameters" type="AdditionalParameters"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderSnapshot">
+		<xs:complexType>
+			<xs:sequence>
+			<xs:element type="xs:string" name="Status"/>
+			<xs:element type="xs:string" name="ResponseMessage"/>
+			<xs:element type="xs:string" name="OrderNumber" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:string" name="NumberOfItems" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:decimal" name="OrderTax" minOccurs="0" maxOccurs="1"/>
+			<xs:element type="xs:decimal" name="OrderTotal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="Items">
+			<xs:complexType>
+				<xs:sequence>
+				<xs:element name="Item" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+					<xs:sequence>
+						<xs:element type="xs:string" name="ItemRequestType"/>
+						<xs:element type="xs:string" name="itemID"/>
+						<xs:element type="xs:string" name="itemQuantity"/>
+						<xs:element type="xs:decimal" name="itemAmount"/>
+						<xs:element type="xs:decimal" name="itemTotalAmount"/>
+						<xs:element type="xs:decimal" name="itemTaxAmount"/>
+						<xs:element type="xs:decimal" name="itemTaxTotal"/>
+						<xs:element type="xs:string" name="itemType"/>
+						<xs:element type="xs:string" name="itemTypeValue"/>
+						<xs:element type="xs:string" name="itemUPC"/>
+						<xs:element type="xs:string" name="itemDescription"/>
+						<xs:element type="xs:string" name="itemCategory"/>
+						</xs:sequence>
+					</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InitiateKeyedEntryResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransactionResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+				<xs:element type="xs:decimal" name="AmountApproved"/>
+				<xs:element type="xs:string" name="AuthorizationCode" minOccurs="0" maxOccurs="1"/>
+				<xs:element type="xs:string" name="CardHolder" minOccurs="0" maxOccurs="1"/>
+				<xs:element type="xs:string" name="Cardholder" minOccurs="0" maxOccurs="1"/>
+				<xs:element type="xs:string" name="AccountNumber"/>
+				<xs:element type="xs:string" name="PaymentType"/>
+				<xs:element type="xs:string" name="EntryMode"/>
+				<xs:element type="xs:string" name="ErrorMessage"/>
+				<xs:element type="xs:string" name="Token"/>
+				<xs:element type="xs:string" name="TransactionDate"/>
+				<xs:element type="xs:string" name="TransactionType"/>
+				<xs:element type="xs:string" name="ResponseType"/>
+				<xs:element type="xs:string" name="ValidationKey"/>
+				<xs:element name="AdditionalParameters" type="AdditionalParameters"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AgreementTextResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="RequestID"/>
+				<xs:element type="xs:string" name="Status"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetSignatureResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+				<xs:element type="xs:string" name="SignatureData"/>
+				<xs:element type="xs:string" name="RequestID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetCustomerInputResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element type="xs:string" name="Status"/>
+				<xs:element type="xs:string" name="RequestID"/>
+				<xs:element name="Values">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Value" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute type="xs:string" name="inputType"/>
+											<xs:attribute type="xs:string" name="name"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
