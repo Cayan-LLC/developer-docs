@@ -7,7 +7,7 @@ Module Module1
         Dim credentialsName = "TEST MERCHANT"
         Dim credentialsSiteId = "XXXXXXXX"
         Dim credentialsKey = "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"
-        Dim ipAddress = "10.4.50.151"
+        Dim ipAddress = "192.168.0.123"
         ' Build Transport request details
         Dim transportRequest As New TransportRequest With {
             .TransactionType = "SALE",
