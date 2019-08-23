@@ -77,9 +77,9 @@ public class MainFragment extends Fragment implements View.OnClickListener, Post
         String NAMESPACE = "http://transport.merchantware.net/v4/";
 
         SoapObject Request = new SoapObject(NAMESPACE, METHOD_NAME);
-        Request.addProperty("merchantName", PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getString("merchantName", "Test BBPOS"));
-        Request.addProperty("merchantSiteId", PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getString("merchantSiteId", "PGFKZEEV"));
-        Request.addProperty("merchantKey", PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getString("merchantKey", "QC1RV-RED27-2YGN3-8047K-LFR46"));
+        Request.addProperty("merchantName", PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getString("merchantName", "XXX Test MerchantDBA XXX"));
+        Request.addProperty("merchantSiteId", PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getString("merchantSiteId", "XXXXXX"));
+        Request.addProperty("merchantKey", PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getString("merchantKey", "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX"));
 
         PropertyInfo HealthCareAmountDetails = new PropertyInfo();
         HealthCareAmountDetails.setName("HealthCareAmountDetails");
