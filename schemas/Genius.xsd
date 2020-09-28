@@ -486,7 +486,7 @@
         <xs:element type="xs:decimal" name="Items" minOccurs="0" maxOccurs="1"/>
         <xs:element type="xs:decimal" name="Discounts" minOccurs="0" maxOccurs="1"/>
         <xs:element type="decimalOrEmpty" name="TotalAmount" minOccurs="0" maxOccurs="1"/>
-        <xs:element type="decimalOrEmpty" name="CustomSubTotal" minOccurs="0" maxOccurs="1"/>
+        <xs:element type="xs:string" name="CustomSubTotal" minOccurs="0" maxOccurs="1"/>
         <xs:element type="decimalOrEmpty" name="TaxAmount" minOccurs="0" maxOccurs="1"/>
         <xs:element type="xs:string" name="ItemID" minOccurs="0" maxOccurs="1"/>
         <xs:element name="AdditionalParameters" type="AdditionalParameters"/>
