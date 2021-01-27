@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SaleKeyed", "SaleKeyed\SaleKeyed.pyproj", "{B87042CC-26CE-426D-811E-4E6B97CC3268}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B87042CC-26CE-426D-811E-4E6B97CC3268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B87042CC-26CE-426D-811E-4E6B97CC3268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26BF54E9-8B8E-4A31-9D45-2847959E42A5}
+	EndGlobalSection
+EndGlobal
